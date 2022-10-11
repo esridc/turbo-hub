@@ -3,13 +3,23 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**", ".next/**"],
+      "inputs": [
+        "apps/**/*.tsx", 
+        "apps/**/*.ts", 
+        "apps/**/*.hbs", 
+        "apps/**/*.js",
+        "packages/**/*.tsx", 
+        "packages/**/*.ts", 
+        "packages/**/*.css"
+      ]
     },
     "lint": {
       "outputs": []
     },
     "dev": {
-      "cache": false
+      "cache": false,
+      "dependsOn": ["^build"]
     }
   }
 }
