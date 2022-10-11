@@ -1,20 +1,19 @@
-# Turborepo starter
+# Turbo Hub
 
-This is an official npm starter turborepo.
+Test repo containing:
 
-## What's inside?
+- ember 3.28 app
+- stencil component lib
+- typescript lib
+- other default turbo repo packages / apps - not used
 
-This turborepo uses [npm](https://www.npmjs.com/) as a package manager. It includes the following packages/apps:
+## Goal
 
-### Apps and Packages
+Be able to develop on the library, stencil components and ember at the same time and have everything auto-rebuild and refresh.
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+### Status
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+At this point, changes in the lib, cause rebuilds of the component and the ember app. However, the updated lib functions are only reflected in the ember app - although the component rebuilds, it does not pick up the updated version of the function from the lib.
 
 ### Utilities
 
@@ -40,25 +39,6 @@ To develop all apps and packages, run the following command:
 ```
 cd my-turborepo
 npm run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-npx turbo link
 ```
 
 ## Useful Links
